@@ -9,15 +9,21 @@ import { Product } from '../../../core/models/product.model';
   styleUrls: ['./products.component.scss'],
 })
 export class ProductsComponent implements OnInit {
-  products: Product[];
+  products: Product[] = [];
 
   constructor(private productsService: ProductsService) {}
 
   ngOnInit(): void {
-    this.products = this.productsService.getAllProducts();
+    this.fetchProducts();
   }
 
   clickProduct(id: number) {
     console.log('Product ' + id);
+  }
+
+  fetchProducts() {
+    this.productsService.getAllProducts().subscribe((products) => {
+      this.products = products;
+    });
   }
 }
