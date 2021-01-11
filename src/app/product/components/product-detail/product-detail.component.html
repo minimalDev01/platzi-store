@@ -4,12 +4,12 @@
   </div>
   <div>
     <ul>
-      <li>Nombre: {{ product.title }}</li>
-      <li>Precio: {{ product.price | currency }}</li>
+      <li>Name: {{ product.title }}</li>
+      <li>Price: {{ product.price | currency }}</li>
     </ul>
     <p>{{ product.description }}</p>
   </div>
-  <button (click)="createProduct()">Crear artículo</button>
-  <button (click)="updateProduct()">Actualizar artículo</button>
-  <button (click)="deleteProduct()">Eliminar artículo</button>
+  <button (click)="createProduct()">New product</button>
+  <button (click)="updateProduct()">Update product</button>
+  <button (click)="deleteProduct()">Delete product</button>
 </div>
