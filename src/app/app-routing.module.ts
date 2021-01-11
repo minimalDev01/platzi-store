@@ -33,6 +33,11 @@ const routes: Routes = [
           import('./contact/contact.module').then((m) => m.ContactModule),
       },
       {
+        path: 'order',
+        loadChildren: () =>
+          import('./order/order.module').then((m) => m.OrderModule),
+      },
+      {
         path: 'demo',
         canActivate: [AdminGuard],
         loadChildren: () =>
