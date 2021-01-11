@@ -33,6 +33,14 @@
               type="number"
             />
           </mat-form-field>
+          <div *ngIf="priceField.errors && priceField.dirty">
+            <mat-error *ngIf="priceField.hasError('price_invalid')">
+              Field not valid
+            </mat-error>
+            <mat-error *ngIf="priceField.hasError('required')"
+              >Field required
+            </mat-error>
+          </div>
         </div>
       </div>
       <div class="row">
