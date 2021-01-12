@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 
-import { LayoutComponent } from './layout/layout.component';
+import { LayoutComponent } from '@layout/layout.component';
 
-import { AdminGuard } from './admin.guard';
+import { AdminGuard } from '@app/admin.guard';
 
 const routes: Routes = [
   {
@@ -34,11 +34,6 @@ const routes: Routes = [
         path: 'order',
         loadChildren: () =>
           import('./order/order.module').then((m) => m.OrderModule),
-      },
-      {
-        path: 'demo',
-        loadChildren: () =>
-          import('./demo/demo.module').then((m) => m.DemoModule),
       },
     ],
   },

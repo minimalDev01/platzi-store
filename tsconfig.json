@@ -15,6 +15,22 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "@core/*": ["src/app/core/*"],
+      "@material/*": ["src/app/material/*"],
+      "@shared/*": ["src/app/shared/*"],
+      "@admin/*": ["src/app/admin/*"],
+      "@utils/*": ["src/app/utils/*"],
+      "@auth/*": ["src/app/auth/*"],
+      "@contact/*": ["src/app/contact/*"],
+      "@home/*": ["src/app/home/*"],
+      "@layout/*": ["src/app/layout/*"],
+      "@order/*": ["src/app/order/*"],
+      "@page-not-found/*": ["src/app/page-not-found/*"],
+      "@product/*": ["src/app/product/*"],
+      "@environments/*": ["src/environments/*"],
+      "@app/*": ["src/app/*"],
+    }
   }
 }

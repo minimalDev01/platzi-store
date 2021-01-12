@@ -7,14 +7,14 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 
-import { environment } from '../environments/environment';
+import { environment } from '@environments/environment';
 
-import { AppComponent } from './app.component';
-import { LayoutComponent } from './layout/layout.component';
+import { AppComponent } from '@app/app.component';
+import { LayoutComponent } from '@layout/layout.component';
 
-import { AppRoutingModule } from './app-routing.module';
-import { SharedModule } from './shared/shared.module';
-import { CoreModule } from './core/core.module';
+import { AppRoutingModule } from '@app/app-routing.module';
+import { SharedModule } from '@shared/shared.module';
+import { CoreModule } from '@core/core.module';
 
 @NgModule({
   declarations: [AppComponent, LayoutComponent],

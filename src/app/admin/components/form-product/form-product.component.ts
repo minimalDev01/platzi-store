@@ -5,8 +5,8 @@ import { AngularFireStorage } from '@angular/fire/storage';
 import { finalize } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 
-import { ProductsService } from '../../../core/services/products/products.service';
-import { MyValidators } from '../../../utils/validators';
+import { ProductsService } from '@core/services/products/products.service';
+import { MyValidators } from '@utils/validators';
 
 @Component({
   selector: 'app-form-product',
