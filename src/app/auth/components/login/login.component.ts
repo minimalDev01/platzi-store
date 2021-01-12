@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
+import { AuthService } from '../../../core/services/auth.service';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -10,7 +12,11 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
   form: FormGroup;
 
-  constructor(private formBuilder: FormBuilder, private router: Router) {
+  constructor(
+    private formBuilder: FormBuilder,
+    private router: Router,
+    private authService: AuthService
+  ) {
     this.buildForm();
   }
 
@@ -20,7 +26,15 @@ export class LoginComponent implements OnInit {
     event.preventDefault();
 
     if (this.form.valid) {
-      this.router.navigate(['/home']);
+      const value = this.form.value;
+      this.authService
+        .login(value.email, value.password)
+        .then(() => {
+          this.router.navigate(['/admin']);
+        })
+        .catch(() => {
+          alert('Login not valid');
+        });
     }
   }
 
