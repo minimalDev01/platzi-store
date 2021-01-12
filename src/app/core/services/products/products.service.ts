@@ -6,6 +6,8 @@ import { catchError } from 'rxjs/operators';
 import { Product } from '@core/models/product.model';
 import { environment } from '@environments/environment';
 
+import * as Sentry from '@sentry/angular';
+
 @Injectable({
   providedIn: 'root',
 })
@@ -44,6 +46,7 @@ export class ProductsService {
 
   private handleError(error: HttpErrorResponse) {
     console.log(error);
+    Sentry.captureException(error);
     return throwError('Something went wrong...');
   }
 }

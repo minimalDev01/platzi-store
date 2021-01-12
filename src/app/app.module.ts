@@ -16,6 +16,12 @@ import { AppRoutingModule } from '@app/app-routing.module';
 import { SharedModule } from '@shared/shared.module';
 import { CoreModule } from '@core/core.module';
 
+import * as Sentry from '@sentry/angular';
+Sentry.init({
+  dsn:
+    'https://b4e8fad08341444a93a41640098a787e@o503771.ingest.sentry.io/5589334',
+});
+
 @NgModule({
   declarations: [AppComponent, LayoutComponent],
   imports: [
