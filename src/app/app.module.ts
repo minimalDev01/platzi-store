@@ -6,8 +6,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireStorageModule } from '@angular/fire/storage';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { environment } from '@environments/environment';
+import { AuthInterceptor } from './auth.interceptor';
 
 import { AppComponent } from '@app/app.component';
 import { LayoutComponent } from '@layout/layout.component';
@@ -36,7 +38,13 @@ Sentry.init({
     AngularFireAuthModule,
     AngularFireStorageModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true,
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
