@@ -44,6 +44,10 @@ export class ProductsService {
       .pipe(catchError(this.handleError));
   }
 
+  getFile() {
+    return this.http.get('assets/files/test.txt', { responseType: 'text' });
+  }
+
   private handleError(error: HttpErrorResponse) {
     console.log(error);
     Sentry.captureException(error);

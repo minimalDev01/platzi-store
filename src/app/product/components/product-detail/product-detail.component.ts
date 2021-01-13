@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { switchMap } from 'rxjs/operators';
 import { Observable } from 'rxjs';
+import * as FileSaver from 'file-saver';
 
 import { ProductsService } from '@core/services/products/products.service';
 import { Product } from '@core/models/product.model';
@@ -61,6 +62,19 @@ export class ProductDetailComponent implements OnInit {
   deleteProduct() {
     this.productsService.deleteProduct('222').subscribe((resp) => {
       console.log(resp);
+    });
+  }
+
+  getTxtFile() {
+    this.productsService.getFile().subscribe((content) => {
+      console.log(content);
+    });
+  }
+
+  downloadFile() {
+    this.productsService.getFile().subscribe((content) => {
+      var blob = new Blob([content], { type: 'text/plain;charset=utf-8' });
+      FileSaver.saveAs(blob, 'file.txt');
     });
   }
 }

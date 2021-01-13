@@ -24,6 +24,7 @@
     "@angular/router": "~11.0.1",
     "@sentry/angular": "^5.29.2",
     "@sentry/tracing": "^5.29.2",
+    "file-saver": "^2.0.5",
     "firebase": "^7.0 || ^8.0",
     "flexboxgrid": "^6.3.1",
     "rxjs": "~6.6.0",
